@@ -1,0 +1,30 @@
+<ion-content>
+  <div *ngFor="let item of items">
+    <ion-card>
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="sanitize(item.photo)" (error)="setDefaultPic(item)" />
+        </ion-avatar>
+        <h2>{{ item.name }}</h2>
+        <p>
+          date : from {{ item.start }} <br />
+          to {{ item.end }}
+        </p>
+      </ion-item>
+
+      <ion-card-content>
+        <h4>Your Comment :</h4>
+        <p>{{ item.comment }}</p>
+
+        <h4>Moniteur response</h4>
+        <div *ngIf="item.response; else other_content">
+          <p>{{ item.response }}</p>
+        </div>
+
+        <ng-template #other_content
+          ><p>there is no response yet ...</p></ng-template
+        >
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

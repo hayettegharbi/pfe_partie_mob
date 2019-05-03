@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{this.object.genre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+  
+    <ion-item>
+      <ion-label floating>Nom</ion-label>
+      <ion-input  [(ngModel)]="nom"  type="text" ></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Prenom</ion-label>
+      <ion-input  [(ngModel)]="prenom"  type="text" ></ion-input>
+    </ion-item>
+  
+  
+  
+    <ion-item>
+      <ion-label floating>Phone</ion-label>
+      <ion-input  [(ngModel)]="phone" type="number"></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input  [(ngModel)]="password"  type="password" ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <img src={{this.photo}}  height="250" width="250">
+    <input type="file" (change)="detectFiles($event)"
+     accept="image/*">
+<p *ngIf="fileUploaded">Fichier chargé !</p>
+
+    <button ion-button block color="primary" (click)="signup()">Signup</button>
+  
+  </ion-content>

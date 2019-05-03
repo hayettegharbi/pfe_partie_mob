@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>AjouterHeure</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+{{this.date}}
+<ion-content padding>
+  <ion-item>
+    <ion-label>Condidat</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option  *ngFor='let Condidat of moniteurs' value="{{moniteurs.indexOf(Condidat)}}">{{Condidat.nom}} {{Condidat.prenom}}</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>start time</ion-label>
+    <ion-datetime  [(ngModel)]="start"  displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>end time</ion-label>
+    <ion-datetime  [(ngModel)]="end"  displayFormat="HH:mm"></ion-datetime>
+  </ion-item>
+  <button ion-button block (click)='validate()'>validate</button>
+</ion-content>

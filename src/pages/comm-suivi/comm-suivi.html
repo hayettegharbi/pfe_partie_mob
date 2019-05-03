@@ -1,0 +1,30 @@
+<ion-content>
+  <div *ngFor="let item of items">
+    <ion-card *ngIf="item.response == undefined">
+      <ion-item>
+        <ion-avatar item-start>
+          <img [src]="sanitize(item.photo)" (error)="setDefaultPic(item)" />
+        </ion-avatar>
+        <h2>{{ item.name }}</h2>
+        <p>
+          date : from {{ item.start }} <br />
+          to {{ item.end }}
+        </p>
+      </ion-item>
+
+      <ion-card-content>
+        <p>{{ item.comment }}</p>
+
+        <ion-item>
+          <ion-textarea
+            #text
+            rows="3"
+            cols="20"
+            placeholder="Enter any notes here..."
+          ></ion-textarea>
+        </ion-item>
+        <button ion-button block (click)="validate(item)">validate</button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

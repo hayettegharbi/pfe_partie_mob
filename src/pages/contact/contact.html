@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Payement List </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor="let item of items">
+    <ion-item>
+      <ion-avatar item-start>
+        <img [src]="sanitize(item.photo)" (error)="setDefaultPic(item)" />
+      </ion-avatar>
+      <h2>Condidat :{{ item.name }}</h2>
+      <h3>Montant :{{ item.montant }}(Dinar)</h3>
+      <p>Date :{{ item.date }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

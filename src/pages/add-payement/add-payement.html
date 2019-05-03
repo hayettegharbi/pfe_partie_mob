@@ -1,0 +1,30 @@
+<!--
+ 
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>addPayement</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>Condidat</ion-label>
+    <ion-select [(ngModel)]="gender">
+      <ion-option
+        *ngFor="let Condidat of moniteurs"
+        value="{{ moniteurs.indexOf(Condidat) }}"
+        >{{ Condidat.nom }} {{ Condidat.prenom }}</ion-option
+      >
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime [(ngModel)]="date"></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label>Montant</ion-label>
+    <ion-input [(ngModel)]="montant" type="number"></ion-input>
+  </ion-item>
+  <button ion-button block (click)="validate()">Validate</button>
+</ion-content>

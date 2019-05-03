@@ -1,0 +1,18 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>add comment</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-textarea
+      [(ngModel)]="comment"
+      rows="3"
+      cols="20"
+      placeholder="Enter any notes here..."
+    ></ion-textarea>
+  </ion-item>
+  <button ion-button block (click)="validate()">validate</button>
+</ion-content>

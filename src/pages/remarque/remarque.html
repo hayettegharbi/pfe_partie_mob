@@ -1,0 +1,25 @@
+<!--
+  Generated template for the RemarquePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>remarque</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-textarea
+      [(ngModel)]="remarque"
+      rows="6"
+      cols="20"
+      placeholder="Enter any notes here..."
+    ></ion-textarea>
+  </ion-item>
+
+  <h3>Map here</h3>
+  <button ion-button block (click)="validate()">validate</button>
+</ion-content>
